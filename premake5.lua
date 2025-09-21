@@ -1,6 +1,7 @@
 project "ImGui"
     kind "StaticLib"
     language "C++"
+    staticruntime "on"
 
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -23,10 +24,9 @@ project "ImGui"
     filter {"system:Windows"}
         systemversion "latest"
         cppdialect "C++17"
-        staticruntime "On"
 
     filter { "system:Windows", "configurations:Release" }
-        buildoptions "/MD"
+        runtime "Release"
 
     filter { "system:Windows", "configurations:Debug" }
-        buildoptions "/MDd"
+        runtime "Debug"
