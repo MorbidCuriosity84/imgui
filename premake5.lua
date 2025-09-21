@@ -19,6 +19,7 @@ project "ImGui"
         "imst_textedit.h",
         "imstb_truetype.h",
         "imgui_demo.cpp"
+        "%{prj.name}/**.cpp",
     }
 
     filter {"system:Windows"}
